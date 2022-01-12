@@ -4,4 +4,10 @@
     <string name="button_search">Узнать стоимость</string>
     <string name="price">Стоимость <br/> квартиры  за 1<br/> клик</string>
     <string name="preview">Введите <b>адресс</b> квартиры,и ожидайте всего <br/> <b>15 секунд</b></string>
+    
+    //second
+    <string name="adress">Адресс: XXX</string>
+    <string name="square">Площадь:XXX</string>
+    <string name="floor">Этаж:XXX</string>
+    <string name="priceYourFlat">Стоимось Вашей квартиры:<br/> XXX</string>
 </resources>
