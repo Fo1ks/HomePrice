@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HomePrice</string>
+    <string name="input_adress">Введите адресс</string>
+    <string name="button_search">Узнать стоимость</string>
+    <string name="price">Стоимость <br/> квартиры  за 1<br/> клик</string>
+    <string name="preview">Введите <b>адресс</b> квартиры,и ожидайте всего <br/> <b>15 секунд</b></string>
+</resources>
