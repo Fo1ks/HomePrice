@@ -1,7 +1,9 @@
-package com.example.homeprice
+package com.example.homeprice.a
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.homeprice.R
+import com.example.homeprice.a.FragmentOne
 import com.example.homeprice.databinding.ActivityFragmentsBinding
 
 class FragmentsActivity:AppCompatActivity() {
@@ -13,7 +15,7 @@ class FragmentsActivity:AppCompatActivity() {
         setContentView(binding.root)
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.containersFragment,MainActivity())
+            .add(R.id.fragmentContainers, FragmentOne())
             .commit()
 
     }
