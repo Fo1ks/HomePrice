@@ -1,13 +1,11 @@
-package com.example.homeprice.a
+package com.example.homeprice.a.data
 
-data class Cadastr (
+data class CurrentCadaster (
     val objectsList : List<objects>
-        ) {
+) {
     data class objects (
-    val CADNOMER: String,
-    val ADDRESS: String,
-    val TYPE: String,
-    val AREA :String,
-    val CATEGORY: String
+        val CADNOMER: String,
+        val TYPE: String,
+        val AREA: String
     )
 }

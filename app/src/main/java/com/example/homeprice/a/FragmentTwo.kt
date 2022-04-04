@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.homeprice.databinding.FragmentTwoBinding
 
 class FragmentTwo: Fragment() {
-    lateinit var binding :FragmentTwoBinding
+    private lateinit var binding :FragmentTwoBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -1,24 +1,29 @@
 package com.example.homeprice.a.data
 
-import com.example.homeprice.a.Cadastr
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class Repository {
     companion object {
         val api = Retrofit.Builder()
-            .baseUrl(" https://apiegrn.ru/api/cadaster/search")
+            .baseUrl("https://apiegrn.ru/api/cadaster/search/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(ApiInterf::class.java)
+            .create(CurrentApi::class.java)
+          val token = "OQZG-WJHA-HI9A-PEHF"
     }
-        val appId = "6XB9-TYJK-SSMI-RHLT"
 
-        suspend fun getApi(query: String, grouped: String):
 
-                Cadastr = withContext(Dispatchers.IO) {
-            api.getAp("$query,$grouped", appId)
+        suspend fun getCurrentCadaster(query: String,grouped : Int): Response<CurrentCadaster>
+            = withContext(Dispatchers.IO)  {
+            api.getApp(token, query,grouped)
         }
     }
+
+//      suspend fun getCurrentCadaster(query: String, grouped: Int):CurrentCadaster = withContext(Dispatchers.IO)  {
+//            api.getApp(token, query, grouped )
+//        }
+//    }

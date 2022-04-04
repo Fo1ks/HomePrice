@@ -14,8 +14,8 @@ import kotlinx.coroutines.launch
 import java.lang.Exception
 
 class FragmentOne : Fragment() {
-    lateinit var binding: FragmentOneBinding
-    private  val scope = MainScope()
+    private lateinit var binding: FragmentOneBinding
+    private val scope = MainScope()
     private val repository = Repository()
 
     override fun onCreateView(
@@ -30,33 +30,32 @@ class FragmentOne : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.button.setOnClickListener {
             val inputButton = binding.input.text.toString()
-            val inputButton1 = binding.input.text.toString()
 
-
-                scope.launch {
-                    try {
-                        val repo = repository.getApi(inputButton,inputButton1)
-                        Log.d(javaClass.simpleName,repo.toString())
-                    }catch (e:Exception){
-                        Log.w(javaClass.simpleName,e)
-                    }
+            scope.launch {
+                try {
+                    val repo = repository.getCurrentCadaster(inputButton,0)
+                    Log.wtf(javaClass.simpleName, repo.toString())
+                } catch (e: Exception) {
+                    Log.wtf(javaClass.simpleName, e)
                 }
-        }
+            }
 
 
-        binding.button.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(
-                    R.id.fragmentContainers,
-                        FragmentTwo().also {
+            binding.button.setOnClickListener {
+                parentFragmentManager.beginTransaction()
+                    .replace(
+                        R.id.fragmentsContainer,
+                        FragmentTwo().also { it ->
                             it.arguments = Bundle().also {
                                 it.putString("input", binding.input.text.toString())
 
-                                }
                             }
-                        )
-                .addToBackStack(null)
-                .commit()
+                        }
+                    )
+                    .addToBackStack(null)
+                    .commit()
+            }
         }
     }
 }
+
